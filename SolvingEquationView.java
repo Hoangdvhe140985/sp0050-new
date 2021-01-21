@@ -13,31 +13,30 @@ import java.util.List;
  */
 public class SolvingEquationView {
 
-    SolvingEquation se = new SolvingEquation();
-    Validate v = new Validate();
+    InputData input = new InputData();
 
-    public void output(List<Float> typeNum, List<Float> solution) {
+    public void outputEvenOddSquare(List<Double> typeNum, List<Double> solution) {
         String outputOdd = "";
         String outputEven = "";
         String square = "";
-        for (Float x : typeNum) {
+        for (Double x : typeNum) {
             if (x % 2 == 0) {
                 outputEven += x + ", ";
             } else {
                 outputOdd += x + ", ";
             }
-            if (v.isSquare(x)) {
+            if (input.isSquare(x)) {
                 square += x + ", ";
             }
         }
-        for (Float x : solution) {
+        for (Double x : solution) {
             if (x != null) {
                 if (x % 2 == 0) {
                     outputEven += x + ", ";
                 } else {
                     outputOdd += x + ", ";
                 }
-                if (v.isSquare(x)) {
+                if (input.isSquare(x)) {
                     square += x + ", ";
                 }
             }
@@ -52,13 +51,12 @@ public class SolvingEquationView {
             System.out.println("Square Number: " + square.substring(0, square.length() - 2));
         }
     }
-
-
-    public void outputSuperlative(List<Float> typeNum, List<Float> solution) {       
-        String solu = "";
+ 
+    public void outputSuperlative(List<Double> typeNum, List<Double> solution) {
+        String solutionn = "";
         if (!solution.isEmpty()) {
-            for (Float x : solution) {
-                solu = x + "";
+            for (Double x : solution) {
+                solutionn = x + "";
                 if (x == null) {
                     System.out.println("phuong trinh vo nghiem");
                 } else {
@@ -68,28 +66,20 @@ public class SolvingEquationView {
         } else {
             System.out.println("phuong trinh vo so nghiem");
         }
-        output(typeNum, solution);
+        outputEvenOddSquare(typeNum, solution);
     }
 
-
-    public void outputQuadratic(List<Float> typeNum, List<Float> solution) {       
+    public void outputQuadratic(List<Double> typeNum, List<Double> solution) {
         if (!solution.isEmpty()) {
             for (int i = 0; i < solution.size(); i++) {
                 System.out.print(" Solution x" + (i + 1) + " = " + solution.get(i));
-            }            
+            }
         } else if (solution.isEmpty()) {
             System.out.print("phuong trinh vo nghiem");
         }
         System.out.println("");
-        output(typeNum, solution);
+        outputEvenOddSquare(typeNum, solution);
     }
 
-    public void menu() {
-        System.out.println("=======Equation program=======");
-        System.out.println("1. Calculate Superlative Equation");
-        System.out.println("2. Calculate Quadratic Equation");
-        System.out.println("3. Exit");
-        System.out.print("Enter your choice: ");
-    }
 
 }

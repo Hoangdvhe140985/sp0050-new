@@ -13,8 +13,8 @@ import java.util.List;
  */
 public class SolvingEquation {
 
-    public void superlativeProcess(List<Float> typeNum,
-            List<Float> solution, float a, float b) {
+    public void superlativeProcess(List<Double> typeNum,
+            List<Double> solution, double a, double b) {
 
         typeNum.add(a);
         typeNum.add(b);
@@ -25,26 +25,26 @@ public class SolvingEquation {
                 solution.add(null);
             }
         } else {
-            float x = -b / a;
+            double x = -b / a;
             solution.add(x);
         }
     }
 
-    public void quadraticProcess(List<Float> typeNum,
-            List<Float> solution, float a, float b, float c) {
+    public void quadraticProcess(List<Double> typeNum,
+            List<Double> solution, Double a, Double b, Double c) {
 
         typeNum.add(a);
         typeNum.add(b);
         typeNum.add(c);
         if (a != 0) {
-            float deta = b * b - 4 * a * c;
+            Double deta = b * b - 4 * a * c;
             if (deta > 0) {
-                float x1 = (float) ((-b + Math.sqrt(deta)) / (a * 2));
-                float x2 = (float) ((-b - Math.sqrt(deta)) / (a * 2));
+                double x1 = (float) ((-b + Math.sqrt(deta)) / (a * 2));
+                double x2 = (float) ((-b - Math.sqrt(deta)) / (a * 2));
                 solution.add(x1);
                 solution.add(x2);
             } else if (deta == 0) {
-                float x = -b / (2 * a);
+                double x = -b / (2 * a);
                 solution.add(x);
                 solution.add(x);
             } else {
