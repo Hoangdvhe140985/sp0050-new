@@ -56,8 +56,8 @@ public class InputData {
     }
     
     //input number
-    public double inputNumber(String msg, String err) {
-        double number = getInputDouble(msg,err);
+    public double inputNumber(String msg) {
+        double number = getInputDouble(msg,"Must be number");
         return number;
     }
 }

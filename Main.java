@@ -24,26 +24,26 @@ public class Main {
 
         //loop until user want to exit     
         while (true) {
+            
             displayMenu();
             int choice = input.getInputIntInRange("Enter your choice: ",
                     "Please input in range[1-3]", 1, 3);
+            
             switch (choice) {
+                
                 case 1:
-                    System.out.println("========Calculate Superlative Equation========");
-                    typeNum.clear();
-                    solution.clear();
-                    double number1 = input.inputNumber("Enter A: ", "must be number");
-                    double number2 = input.inputNumber("Enter B: ", "must be number");
+                    
+                    double number1 = input.inputNumber("Enter A: ");
+                    double number2 = input.inputNumber("Enter B: ");
                     process.superlativeProcess(typeNum, solution, number1, number2);
                     output.outputSuperlative(typeNum, solution);
                     break;
+                    
                 case 2:
-                    System.out.println("========Calculate Quadratic Equation========");
-                    typeNum.clear();
-                    solution.clear();
-                    number1 = input.inputNumber("Enter A: ", "must be number");
-                    number2 = input.inputNumber("Enter B: ", "must be number");
-                    double number3 = input.inputNumber("Enter C: ", "must be number");
+                    
+                    number1 = input.inputNumber("Enter A: ");
+                    number2 = input.inputNumber("Enter B: ");
+                    double number3 = input.inputNumber("Enter C: ");
                     process.quadraticProcess(typeNum, solution, number1, number2, number3);
                     output.outputQuadratic(typeNum, solution);
                     break;
